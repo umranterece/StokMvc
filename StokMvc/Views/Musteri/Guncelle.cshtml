@@ -1,0 +1,36 @@
+﻿@model StokMvc.Models.Entity.Tbl_Musteri
+
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Guncelle</h2>
+
+@using (Html.BeginForm("Guncelle","Musteri",FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Musteri Adi</label>
+        @Html.TextBoxFor(x => x.MusteriAdi, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Musteri Soyadi</label>
+        @Html.TextBoxFor(x => x.MusteriSoyadi, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Musteri Sehir</label>
+        @Html.TextBoxFor(x => x.MusteriSehir, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Musteri Bakiye</label>
+        @Html.TextBoxFor(x => x.MusteriBakiye, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(x => x.MusteriId)
+    <div class="form-group">
+        <button type="submit" class="btn btn-warning">Guncelle</button>
+    </div>
+}

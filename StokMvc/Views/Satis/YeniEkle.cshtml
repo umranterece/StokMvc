@@ -1,0 +1,40 @@
+﻿@model StokMvc.Models.Entity.Tbl_Satis
+@{
+    ViewBag.Title = "YeniEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Yeni Urun Ekle</h2>
+<form action="" method="POST">
+    <div class="form-group">
+        <label>Urun</label>
+        @Html.DropDownListFor(m => m.Tbl_Urun.UrunId, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Personel</label>
+        @Html.DropDownListFor(m => m.Tbl_Personel.PerId, (List<SelectListItem>)ViewBag.personel, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Musteri</label>
+        @Html.DropDownListFor(m => m.Tbl_Musteri.MusteriId, (List<SelectListItem>)ViewBag.musteri, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Fiyat</label>
+        <input type="text" name="SatisFiyat" value="" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Tarih</label>
+        <input type="date" name="SatisTarih" value="" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
+

@@ -1,0 +1,51 @@
+﻿@model StokMvc.Models.Entity.Tbl_Urun
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Urun Guncelle</h2>
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.UrunAdi)
+        @Html.TextBoxFor(m => m.UrunAdi, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UrunMarka)
+        @Html.TextBoxFor(m => m.UrunMarka, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UrunStok)
+        @Html.TextBoxFor(m => m.UrunStok, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UrunAlisFiyat)
+        @Html.TextBoxFor(m => m.UrunAlisFiyat, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UrunSatisFiyat)
+        @Html.TextBoxFor(m => m.UrunSatisFiyat, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UrunAdi)
+        @Html.TextBoxFor(m => m.UrunAdi, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Urun Kategori</label>
+        @Html.DropDownListFor(m => m.Tbl_Kategori.KategoriId, (List<SelectListItem>)ViewBag.Kategori, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m=>m.UrunId)
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+}

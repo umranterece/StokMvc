@@ -1,0 +1,38 @@
+﻿@using StokMvc.Models.Entity
+@model List<Tbl_Satis>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Satis Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>URUN</th>
+        <th>PERSONEL</th>
+        <th>MUSTERI</th>
+        <th>FIYAT</th>
+        <th>TARIH</th>
+        
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SatisId</td>
+                <td>@item.Tbl_Urun.UrunAdi</td>
+                <td>@item.Tbl_Personel.PerAdi @item.Tbl_Personel.PerSoyadi</td>
+                <td>@item.Tbl_Musteri.MusteriAdi @item.Tbl_Musteri.MusteriSoyadi</td>
+                <td>@item.SatisFiyat</td>
+                <td>@item.SatisTarih</td>
+               
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<a href="/Satis/YeniEkle" class="btn btn-success">Yeni Ekle</a>
+

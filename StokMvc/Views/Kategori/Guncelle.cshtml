@@ -1,0 +1,21 @@
+﻿@model StokMvc.Models.Entity.Tbl_Kategori
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Guncelle</h2>
+
+@using (Html.BeginForm("Guncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Kategori Adi</label>
+        @Html.TextBoxFor(x => x.KategoriAdi, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(x => x.KategoriId)
+    <div class="form-group">
+        <button type="submit" class="btn btn-warning">Guncelle</button>
+    </div>
+}
+
+

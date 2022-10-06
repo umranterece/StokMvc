@@ -1,0 +1,41 @@
+﻿@model StokMvc.Models.Entity.Tbl_Urun
+@{
+    ViewBag.Title = "YeniEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Urun Ekle</h2>
+<form action="" method="POST">
+    <div class="form-group">
+        <label>Urun Adi</label>
+        <input type="text" name="UrunAdi" value="" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Urun Marka</label>
+        <input type="text" name="UrunMarka" value="" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Urun Stok</label>
+        <input type="text" name="UrunStok" value="" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Urun Alis Fiyat</label>
+        <input type="text" name="UrunAlisFiyat" value="" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Urun Satis Fiyat</label>
+        <input type="text" name="UrunSatisFiyat" value="" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Urun Kategori</label>
+        @Html.DropDownListFor(m => m.Tbl_Kategori.KategoriId, (List<SelectListItem>)ViewBag.Degerler, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>

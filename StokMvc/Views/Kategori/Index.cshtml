@@ -1,0 +1,31 @@
+﻿@using StokMvc.Models.Entity;
+@model List<Tbl_Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KATEGORI</th>
+        <th>SIL</th>
+        <th>GUNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.KategoriId</td>
+                <td>@item.KategoriAdi</td>
+                <td><a href="/Kategori/Sil/@item.KategoriId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Kategori/Guncelle/@item.KategoriId" class="btn btn-success">Guncelle</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<a href="/Kategori/YeniEkle" class="btn btn-success">Yeni Ekle</a>
